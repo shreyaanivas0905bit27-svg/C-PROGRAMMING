@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string>
+#include<cstring>
+using namespace std;
+class book
+{
+public:
+int bookno;
+string bookname;
+public:
+int searchbook(int books[3])
+{
+int i,flag;
+for(i=0;i<3;i++)
+{
+if(bookno==books[i])
+{
+cout<<"book available"<<endl;
+}
+else
+{
+cout<<"book not available"<<endl;
+}
+}
+return 0;
+}
+};
+int main()
+{
+int books[3]={1,2,3};
+int n=3,i;
+char a;
+//ut<<"enter the no of the book users:";
+//>n;
+book*b=new book[n];
+for(i=0;i<n;i++)
+{
+cout<<"do you want to search :";
+cin>>a;
+if(a=='y')
+{
+cout<<"enter the book no:";
+cin>>b[i].bookno;
+b[i].searchbook(books);
+}
+else
+{
+  break;
+}
+return 0;
+}
+}
