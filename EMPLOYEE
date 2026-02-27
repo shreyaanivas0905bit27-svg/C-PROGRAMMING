@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class employee
+{
+   public:
+      string ename;
+      int eno;
+      string eadd;
+   private:
+      int salary;
+   public:
+      void set_salary(int s)
+      {
+         s=salary;
+      }
+      int get_salary()
+      {
+         return salary;
+      }
+};
+      int main()
+      {
+         cout<<"enter the no of employee you want to store:";
+         int i,n,s,b;
+         cin>>n;
+         employee e[n];
+         for(i=0;i<n;i++)
+         {
+            cout<<"\nemployee s name:";
+            cin>>e[i].ename;
+            cout<<"\nemployee s no:";
+            cin>>e[i].eno;
+            cout<<"\n employee s address:";
+            cin>>e[i].eadd;
+         }
+         for(i=0;i<n;i++)
+         {
+            cout<<"enter the salary for employee:",i;
+            cin>>s;
+            e[i].set_salary(s);
+            e[i].get_salary();
+            cout<<"salary:"<<s;
+         }
+         return 0;
+      }
