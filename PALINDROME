@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstring>  // for strlen() and strcmp()
+using namespace std;
+
+class Palindrome {
+public:
+    char temp[40];
+
+    int palindromestring(char str[]) {
+        int i = 0;
+        int j = strlen(str) - 1;
+
+        // Reverse the string
+        while (i < j) {
+            char tempChar = str[i]; // Swap characters
+            str[i] = str[j];
+            str[j] = tempChar;
+            i++;
+            j--;
+        }
+
+        return 0;
+    }
+};
+
+int main() {
+    char str[40];
+    Palindrome p;
+
+    cout << "Enter the string to check: ";
+    cin >> str;
+
+    // Store the original string to compare later
+    char originalStr[40];
+    strcpy(originalStr, str);
+
+    // Reverse the string
+    p.palindromestring(str);
+
+    // Compare the reversed string with the original
+    if (strcmp(originalStr, str) == 0) {
+        cout << "The string is a palindrome" << endl;
+    } else {
+        cout << "The string is not a palindrome" << endl;
+    }
+
+    return 0;
+}
