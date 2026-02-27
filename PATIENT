@@ -1,0 +1,47 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class outpatient
+{
+   public:
+      int pno;
+      string pname;
+      string pdie;
+   public:
+      void p_bill()
+      {
+         int medicine,doctor;
+         cout<<"diseases:";
+         cin>>pdie;
+         cout<<"medicine  bill";
+         cin>>medicine;
+         cout<<"doctor consultant fee:";
+         cin>>doctor;
+         cout<<"your total amount :"<<medicine+doctor;
+      }
+};
+      int main()
+      {
+         int n,i;
+         cout<<"\n enter the no of patient you want to register:";
+         cin>>n;
+         outpatient o[n];
+         for(i=0;i<n;i++)
+         {
+            cout<<"name:";
+            cin>>o[i].pname;
+            cout<<"pno";
+            cin>>o[i].pno;
+         }
+            int j;
+            cout<<"enter the patient no:";
+            cin>>j;
+            for(i=0;i<n;i++)
+            {
+               if(j==o[i].pno)
+               {
+                  o[i].p_bill();
+               }
+            }
+         return 0;
+      }
