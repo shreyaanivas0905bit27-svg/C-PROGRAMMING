@@ -1,0 +1,82 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class student
+{
+   public:
+      string sname;
+      int roll;
+      float cgpa;
+      int m1,m2,m3,m4,m5;
+   public:
+      int compute_cgpa(int m1,int m2,int m3,int m4,int m5)
+      {
+         int i;
+         int total;
+         for(i=0;i<3;i++)
+         {
+            total=m1+m2+m3+m4+m5;
+         }
+         cgpa=total/5;
+         return(cgpa);
+      }
+     void displaydetails()
+     {
+        int i;
+        for(i=0;i<3;i++)
+        {
+           cout<<"\nname:"<< sname;
+           cout<<"\nroll:"<< roll;
+        }
+     }
+};
+int asec(student s[])
+{
+   int i,j,n;
+   student temp;
+   float a,b;
+   for(i=0;i<3;i++)
+   {
+      for(j=i+1;j<3;j++)
+      {
+         if(s[i].cgpa < s[j].cgpa)
+         {
+            temp=s[j];
+            s[i]=s[j];
+            s[j]=temp;
+            cout<<"details:\n";
+         }
+      }
+   }
+}
+int main()
+   {
+      int m1,m2,m3,m4,m5;
+      student s[3];
+      int i,n;
+      float c;
+      for(i=0;i<3;i++)
+      {
+         cout<<"\nname:";
+         cin>>s[i].sname;
+         cout<<"\nroll:";
+         cin>>s[i].roll;
+         cout<<"\nm1:";
+         cin>>m1;
+         cout<<"\nm2:";
+         cin>>m2;
+         cout<<"\nm3:";
+         cin>>m3;
+         cout<<"\nm4:";
+         cin>>m4;
+         cout<<"\nm5:";
+         cin>>m5;
+         c=s[i].compute_cgpa(m1,m2,m3,m4,m5);
+         cout<<"cgpa:"<<c;
+      }
+         for(i=0;i<3;i++)
+         {
+               asec(s);
+         }
+      return 0;
+}
